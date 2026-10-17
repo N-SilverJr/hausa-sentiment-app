@@ -1,0 +1,52 @@
+{
+  "run_id": "T1_afroxlmr_lora",
+  "base_model": "Davlan/afro-xlmr-mini",
+  "max_len": 96,
+  "batch_size": 16,
+  "gradient_accumulation_steps": 2,
+  "epochs": 3,
+  "learning_rate": 0.0002,
+  "lora_r": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.1,
+  "target_modules": [
+    "query",
+    "value"
+  ],
+  "train_seconds": 156.31,
+  "trainable_params": 296451,
+  "total_params": 117938310,
+  "dev_noleak": {
+    "loss": 0.7421132326126099,
+    "accuracy": 0.6628757108042242,
+    "macro_f1": 0.661960143395695,
+    "f1_positive": 0.8088050314465409,
+    "f1_neutral": 0.6364628820960698,
+    "f1_negative": 0.5406125166444741
+  },
+  "test": {
+    "loss": 0.8264433145523071,
+    "accuracy": 0.6021120120686404,
+    "macro_f1": 0.6012959725779472,
+    "f1_positive": 0.7432950191570882,
+    "f1_neutral": 0.4954068241469816,
+    "f1_negative": 0.5651860744297719
+  },
+  "confusion_matrix": [
+    [
+      1261,
+      169,
+      325
+    ],
+    [
+      130,
+      755,
+      904
+    ],
+    [
+      247,
+      335,
+      1177
+    ]
+  ]
+}

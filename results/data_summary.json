@@ -1,0 +1,17 @@
+{
+  "dataset": "AfriSenti Hausa (SemEval 2023 Subtask A)",
+  "source": "https://github.com/afrisenti-semeval/afrisent-semeval-2023",
+  "citation": "Muhammad et al., EMNLP 2023",
+  "labels": [
+    "positive",
+    "neutral",
+    "negative"
+  ],
+  "sizes": {
+    "train": 14172,
+    "dev": 2677,
+    "dev_noleak": 2462,
+    "test": 5303,
+    "dev_leak_rows": 215
+  }
+}

@@ -1,0 +1,13 @@
+index,text,text_bow,gold_id,gold,pred_id,predicted,confidence,correct,n_tokens,n_emoji
+1314,ride on hajiya kin chi uwarsu walahi ba kare mai haushi,ride on hajiya kin chi uwarsu walahi ba kare mai haushi,0,positive,2,negative,0.9486113925315681,False,11,0
+1011,da zaman banza ay gara aikin kishiya,da zaman banza ay gara aikin kishiya,0,positive,2,negative,0.9426331390566242,False,7,0
+4751,wasan gaba a watsa mai kaya kawai,wasan gaba a watsa mai kaya kawai,2,negative,1,neutral,0.9352009786776446,False,7,0
+4009,garin yaya wuka ta dabamasa ko bundiga tasa mar,garin yaya wuka ta dabamasa ko bundiga tasa mar,2,negative,1,neutral,0.9338804506241859,False,9,0
+5103,fatan rashin nasara allah yasa abasu kaya,fatan rashin nasara allah yasa abasu kaya,2,negative,0,positive,0.9311993401265722,False,7,0
+1335,zamu kara cin banza kenan hala madrid,zamu kara cin banza kenan hala madrid,0,positive,2,negative,0.9291125832460962,False,7,0
+3699,allah ubangiji yasine mata,allah ubangiji yasine mata,2,negative,0,positive,0.926594261261725,False,4,0
+4706,allah ya tsare mana maitatsine,allah ya tsare mana maitatsine,2,negative,0,positive,0.9167190379837867,False,5,0
+2253,nabi abincin kaji da gudu ba,nabi abincin kaji da gudu ba,1,neutral,2,negative,0.9074618764263663,False,6,0
+4108,muggan kaya ma,muggan kaya ma,2,negative,1,neutral,0.9063183857568776,False,3,0
+4908,gayama su dai xasu shigo nou camp a nan ne xasu yi bayani,gayama su dai xasu shigo nou camp a nan ne xasu yi bayani,2,negative,1,neutral,0.9059019054911728,False,13,0
+4513,dakyau mai girma hakimin wuhan komai ka fada akan wannan ciwo daidai ne allah ya tayama danmasanin corona,dakyau mai girma hakimin wuhan komai ka fada akan wannan ciwo daidai ne allah ya tayama danmasanin corona,2,negative,0,positive,0.8978336212339437,False,18,0

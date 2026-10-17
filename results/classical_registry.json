@@ -1,0 +1,152 @@
+[
+  {
+    "id": "B0",
+    "name": "majority dummy",
+    "features": "none",
+    "classifier": "dummy",
+    "train_seconds": 0.0,
+    "dev_noleak": {
+      "split": "dev_noleak",
+      "accuracy": 0.35012185215272135,
+      "macro_f1": 0.17288407541115122,
+      "weighted_f1": 0.18159147807198905,
+      "f1_positive": 0.0,
+      "f1_neutral": 0.5186522262334536,
+      "f1_negative": 0.0
+    },
+    "test": {
+      "split": "test",
+      "accuracy": 0.33735621346407696,
+      "macro_f1": 0.16817070877984583,
+      "weighted_f1": 0.17020030058861635,
+      "f1_positive": 0.0,
+      "f1_neutral": 0.5045121263395375,
+      "f1_negative": 0.0
+    }
+  },
+  {
+    "id": "B1",
+    "name": "word TF-IDF + LogReg",
+    "features": "word",
+    "classifier": "logreg",
+    "train_seconds": 0.83,
+    "dev_noleak": {
+      "split": "dev_noleak",
+      "accuracy": 0.723395613322502,
+      "macro_f1": 0.7248448004944054,
+      "weighted_f1": 0.7246043144974373,
+      "f1_positive": 0.8191082802547771,
+      "f1_neutral": 0.6883259911894273,
+      "f1_negative": 0.6671001300390117
+    },
+    "test": {
+      "split": "test",
+      "accuracy": 0.7476899867999246,
+      "macro_f1": 0.748910501787646,
+      "weighted_f1": 0.7486275513916151,
+      "f1_positive": 0.8311915887850467,
+      "f1_neutral": 0.7098651150489289,
+      "f1_negative": 0.7056748015289621
+    }
+  },
+  {
+    "id": "B2",
+    "name": "word TF-IDF + LinearSVC",
+    "features": "word",
+    "classifier": "svc",
+    "train_seconds": 0.61,
+    "dev_noleak": {
+      "split": "dev_noleak",
+      "accuracy": 0.7254264825345248,
+      "macro_f1": 0.7266508132576802,
+      "weighted_f1": 0.7262189730125369,
+      "f1_positive": 0.8228643216080402,
+      "f1_neutral": 0.683090705487122,
+      "f1_negative": 0.6739974126778784
+    },
+    "test": {
+      "split": "test",
+      "accuracy": 0.7522157269470111,
+      "macro_f1": 0.753040068913054,
+      "weighted_f1": 0.7527189581306339,
+      "f1_positive": 0.8376511226252159,
+      "f1_neutral": 0.7075598601022329,
+      "f1_negative": 0.7139092240117131
+    }
+  },
+  {
+    "id": "B3",
+    "name": "char TF-IDF + LogReg",
+    "features": "char",
+    "classifier": "logreg",
+    "train_seconds": 6.22,
+    "dev_noleak": {
+      "split": "dev_noleak",
+      "accuracy": 0.7595450852965069,
+      "macro_f1": 0.7601872166740952,
+      "weighted_f1": 0.7602757993219296,
+      "f1_positive": 0.8408215661103979,
+      "f1_neutral": 0.7388739946380697,
+      "f1_negative": 0.7008660892738174
+    },
+    "test": {
+      "split": "test",
+      "accuracy": 0.7748444276824439,
+      "macro_f1": 0.7759500379259064,
+      "weighted_f1": 0.775695273596614,
+      "f1_positive": 0.8437956204379562,
+      "f1_neutral": 0.7399622743195904,
+      "f1_negative": 0.7440922190201729
+    }
+  },
+  {
+    "id": "B4",
+    "name": "word+char TF-IDF + LinearSVC",
+    "features": "union",
+    "classifier": "svc",
+    "train_seconds": 4.91,
+    "dev_noleak": {
+      "split": "dev_noleak",
+      "accuracy": 0.7611697806661251,
+      "macro_f1": 0.7621053042325713,
+      "weighted_f1": 0.7619539630858163,
+      "f1_positive": 0.8439086294416244,
+      "f1_neutral": 0.7323481116584565,
+      "f1_negative": 0.7100591715976331
+    },
+    "test": {
+      "split": "test",
+      "accuracy": 0.7801244578540448,
+      "macro_f1": 0.7807712145004272,
+      "weighted_f1": 0.7805080542326492,
+      "f1_positive": 0.8526194588370755,
+      "f1_neutral": 0.7438330170777988,
+      "f1_negative": 0.7458611675864072
+    }
+  },
+  {
+    "id": "B5",
+    "name": "word+char TF-IDF + ComplementNB",
+    "features": "union",
+    "classifier": "cnb",
+    "train_seconds": 2.43,
+    "dev_noleak": {
+      "split": "dev_noleak",
+      "accuracy": 0.7173030056864338,
+      "macro_f1": 0.7156953842784923,
+      "weighted_f1": 0.7141503048679642,
+      "f1_positive": 0.8228155339805825,
+      "f1_neutral": 0.6313032089063523,
+      "f1_negative": 0.692967409948542
+    },
+    "test": {
+      "split": "test",
+      "accuracy": 0.7420328116160664,
+      "macro_f1": 0.738538349548698,
+      "weighted_f1": 0.7379919847380058,
+      "f1_positive": 0.833195020746888,
+      "f1_neutral": 0.6545801526717557,
+      "f1_negative": 0.72783987522745
+    }
+  }
+]

@@ -1,0 +1,10 @@
+index,text,text_bow,gold_id,gold,pred_id,predicted,confidence,correct,n_tokens,n_emoji
+1155,masha allah allah yakara basira,masha allah allah yakara basira,0,positive,0,positive,0.9989390341685297,True,5,0
+1183,masha allah abu yayi kyau fatan alkairi allah ya kara daukaka da basira and,masha allah abu yayi kyau fatan alkairi allah ya kara daukaka da basira and,0,positive,0,positive,0.9985363702267277,True,14,0
+1502,masha allah allah yakaika lafiya baba,masha allah allah yakaika lafiya baba,0,positive,0,positive,0.9982712841055247,True,6,0
+4555,mtsww karyar banza,mtsww karyar banza,2,negative,2,negative,0.9972021136968667,True,3,0
+4389,bbc shegiyar karya,bbc shegiyar karya,2,negative,2,negative,0.9961167446527669,True,3,0
+4424,karya suke munafukai,karya suke munafukai,2,negative,2,negative,0.9957242098023923,True,3,0
+1812,saura nawa nima,saura nawa nima,1,neutral,1,neutral,0.9626177104394015,True,3,0
+2738,hmn kudi ake rabawa ne,hmn kudi ake rabawa ne,1,neutral,1,neutral,0.950512534029428,True,5,0
+3226,toh waima xata wuce kuwa,toh waima xata wuce kuwa,1,neutral,1,neutral,0.9503801696977178,True,5,0

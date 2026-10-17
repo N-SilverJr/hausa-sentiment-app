@@ -1,0 +1,82 @@
+{
+  "model": "B4 word+char TF-IDF + LinearSVC",
+  "test_size": 5303,
+  "errors": 1166,
+  "confusion_matrix": [
+    [
+      1481,
+      176,
+      98
+    ],
+    [
+      115,
+      1372,
+      302
+    ],
+    [
+      123,
+      352,
+      1284
+    ]
+  ],
+  "classification_report": {
+    "positive": {
+      "precision": 0.8615474112856312,
+      "recall": 0.8438746438746438,
+      "f1-score": 0.8526194588370755,
+      "support": 1755.0
+    },
+    "neutral": {
+      "precision": 0.7221052631578947,
+      "recall": 0.76690888764673,
+      "f1-score": 0.7438330170777988,
+      "support": 1789.0
+    },
+    "negative": {
+      "precision": 0.7624703087885986,
+      "recall": 0.7299602046617396,
+      "f1-score": 0.7458611675864072,
+      "support": 1759.0
+    },
+    "accuracy": 0.7801244578540448,
+    "macro avg": {
+      "precision": 0.7820409944107082,
+      "recall": 0.7802479120610378,
+      "f1-score": 0.7807712145004272,
+      "support": 5303.0
+    },
+    "weighted avg": {
+      "precision": 0.7816419565821047,
+      "recall": 0.7801244578540448,
+      "f1-score": 0.7805080542326492,
+      "support": 5303.0
+    }
+  },
+  "largest_error_directions": [
+    {
+      "gold": "negative",
+      "predicted": "neutral",
+      "count": 352
+    },
+    {
+      "gold": "neutral",
+      "predicted": "negative",
+      "count": 302
+    },
+    {
+      "gold": "positive",
+      "predicted": "neutral",
+      "count": 176
+    },
+    {
+      "gold": "negative",
+      "predicted": "positive",
+      "count": 123
+    },
+    {
+      "gold": "neutral",
+      "predicted": "positive",
+      "count": 115
+    }
+  ]
+}

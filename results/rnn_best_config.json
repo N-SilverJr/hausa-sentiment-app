@@ -1,0 +1,26 @@
+{
+  "id": "R1",
+  "name": "trainable embedding + mean pooling",
+  "pooling": "embedding_mean",
+  "embedding_dim": 128,
+  "hidden_dim": 128,
+  "lr": 0.002,
+  "epochs": 8,
+  "patience": 2,
+  "dev_noleak": {
+    "accuracy": 0.6811535337124289,
+    "macro_f1": 0.6824956379201286,
+    "f1_positive": 0.7989949748743719,
+    "f1_neutral": 0.6321070234113713,
+    "f1_negative": 0.6163849154746424
+  },
+  "train_seconds": 13.53,
+  "test": {
+    "accuracy": 0.6831981897039412,
+    "macro_f1": 0.6813171778267632,
+    "f1_positive": 0.7899915659263425,
+    "f1_neutral": 0.5952235150030618,
+    "f1_negative": 0.6587364525508855
+  },
+  "n_params": 1364099
+}
