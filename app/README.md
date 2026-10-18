@@ -33,3 +33,19 @@ For Render:
 The repository also includes [`render.yaml`](../render.yaml), which can be used for Blueprint deployment.
 
 The app returns each model's predicted label and the three class probabilities. It applies the same NFC, URL, mention, and whitespace normalization used before training. The classical model is recommended for real use because it achieved the higher test macro-F1.
+
+### Input handling and scope
+
+The classifier is trained for Hausa social-media text written in Latin script;
+it is not a general language identifier. The interface therefore:
+
+- rejects empty, link-only, mention-only, symbol-only, or emoji-only input;
+- limits input to 2,000 characters because the models were trained on short messages;
+- gives an advisory for non-Latin scripts; and
+- gives an advisory when a longer input contains no common Hausa cues.
+
+These language checks are intentionally warnings rather than hard blocks. Short
+Hausa messages can omit recognizable cues, and a lightweight heuristic cannot
+reliably distinguish every Hausa, English, or code-switched message. Predictions
+for such inputs should be treated as out of domain and not as verified language
+detection.

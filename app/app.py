@@ -15,9 +15,37 @@ ROOT = APP_DIR.parent
 CLASSICAL_PATH = ROOT / "models" / "classical_best.joblib"
 RNN_PATH = ROOT / "models" / "rnn_best.pt"
 LABELS = ["positive", "neutral", "negative"]
+MAX_INPUT_CHARS = 2000
+HAUSA_CUES = {
+    "Allah",
+    "ba",
+    "banza",
+    "ce",
+    "da",
+    "don",
+    "godiya",
+    "karya",
+    "kudi",
+    "mai",
+    "masha",
+    "nawa",
+    "ne",
+    "nima",
+    "rashin",
+    "saura",
+    "shi",
+    "ta",
+    "wai",
+    "yake",
+    "ya",
+    "yi",
+    "yaya",
+}
 URL_RE = re.compile(r"https?://\S+|www\.\S+", flags=re.IGNORECASE)
 MENTION_RE = re.compile(r"@\w+")
 CTRL_RE = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\x9f]")
+TOKEN_RE = re.compile(r"[^\W\d_]+", flags=re.UNICODE)
+HAUSA_LETTERS_RE = re.compile(r"[ɓɗƙƴ]", flags=re.IGNORECASE)
 
 if not CLASSICAL_PATH.exists():
     raise FileNotFoundError(f"Classical model file not found: {CLASSICAL_PATH}")
@@ -67,6 +95,33 @@ def text_bow(text: str) -> str:
     return re.sub(r"\s+", " ", cleaned).strip()
 
 
+def input_advisories(text: str) -> list[str]:
+    """Return transparent warnings for inputs outside the training domain."""
+    cleaned = text_bow(text)
+    tokens = TOKEN_RE.findall(cleaned)
+    advisories = []
+
+    if not tokens:
+        raise gr.Error("Enter meaningful Hausa text, not only links, mentions, symbols, or emojis.")
+
+    if any(not token.isascii() for token in tokens) and not HAUSA_LETTERS_RE.search(cleaned):
+        advisories.append(
+            "The text contains a non-Latin script. This model was trained on Hausa written in Latin script."
+        )
+
+    normalized_tokens = {token.casefold() for token in tokens}
+    if len(tokens) >= 3 and not (
+        HAUSA_LETTERS_RE.search(cleaned)
+        or normalized_tokens.intersection({cue.casefold() for cue in HAUSA_CUES})
+    ):
+        advisories.append(
+            "The input does not contain common Hausa cues. The model cannot verify language reliably, "
+            "so treat this as an out-of-domain prediction."
+        )
+
+    return advisories
+
+
 def score_classical(text: str) -> tuple[str, dict[str, float]]:
     probabilities = CLASSICAL_MODEL.predict_proba([text_bow(text)])[0]
     order = CLASSICAL_MODEL.classes_.astype(int)
@@ -97,6 +152,9 @@ def score_rnn(text: str) -> tuple[str, dict[str, float]]:
 def predict_both(text: str):
     if not text or not text.strip():
         raise gr.Error("Enter a Hausa text before submitting.")
+    if len(text) > MAX_INPUT_CHARS:
+        raise gr.Error(f"Enter no more than {MAX_INPUT_CHARS:,} characters.")
+    advisories = input_advisories(text)
     classical_label, classical_scores = score_classical(text)
     rnn_label, rnn_scores = score_rnn(text)
     classical_confidence = max(classical_scores.values())
@@ -119,6 +177,13 @@ def predict_both(text: str):
             "### Result summary\n"
             f"Both models predict **{classical_label}**. The classical model is the primary "
             "model because it performed better on the held-out test set."
+        )
+    if advisories:
+        warning = (
+            "### Input advisory\n"
+            + " ".join(advisories)
+            + "\n\n"
+            + warning
         )
     return classical_label, classical_scores, rnn_label, rnn_scores, warning
 
@@ -143,6 +208,7 @@ with gr.Blocks(title="Hausa Sentiment Classifier", css=CSS, theme=gr.themes.Soft
                 label="Hausa text",
                 placeholder="Rubuta saƙon Hausa a nan...",
                 lines=5,
+                max_length=MAX_INPUT_CHARS,
             )
             submit = gr.Button("Analyze sentiment", variant="primary", size="lg")
             gr.Examples(
