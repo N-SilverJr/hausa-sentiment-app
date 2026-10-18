@@ -61,6 +61,12 @@ The app compares `models/classical_best.joblib` with `models/rnn_best.pt` side b
 It documents the dataset, preprocessing, model comparisons, results, error analysis,
 deployment, limitations, and references.
 
+## Project links
+
+- **GitHub Repository:** https://github.com/N-SilverJr/hausa-sentiment-app
+- **Live System:** https://hausa-sentiment-ob5f.onrender.com
+- **Demo Video:** To be added after recording
+
 ## Render deployment
 
 The app is configured for Render with [`render.yaml`](render.yaml). Push this project to GitHub, then either:
