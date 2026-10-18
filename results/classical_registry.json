@@ -29,7 +29,7 @@
     "name": "word TF-IDF + LogReg",
     "features": "word",
     "classifier": "logreg",
-    "train_seconds": 0.83,
+    "train_seconds": 0.91,
     "dev_noleak": {
       "split": "dev_noleak",
       "accuracy": 0.723395613322502,
@@ -54,7 +54,7 @@
     "name": "word TF-IDF + LinearSVC",
     "features": "word",
     "classifier": "svc",
-    "train_seconds": 0.61,
+    "train_seconds": 0.68,
     "dev_noleak": {
       "split": "dev_noleak",
       "accuracy": 0.7254264825345248,
@@ -79,7 +79,7 @@
     "name": "char TF-IDF + LogReg",
     "features": "char",
     "classifier": "logreg",
-    "train_seconds": 6.22,
+    "train_seconds": 5.26,
     "dev_noleak": {
       "split": "dev_noleak",
       "accuracy": 0.7595450852965069,
@@ -104,7 +104,7 @@
     "name": "word+char TF-IDF + LinearSVC",
     "features": "union",
     "classifier": "svc",
-    "train_seconds": 4.91,
+    "train_seconds": 4.79,
     "dev_noleak": {
       "split": "dev_noleak",
       "accuracy": 0.7611697806661251,
@@ -129,7 +129,7 @@
     "name": "word+char TF-IDF + ComplementNB",
     "features": "union",
     "classifier": "cnb",
-    "train_seconds": 2.43,
+    "train_seconds": 3.07,
     "dev_noleak": {
       "split": "dev_noleak",
       "accuracy": 0.7173030056864338,

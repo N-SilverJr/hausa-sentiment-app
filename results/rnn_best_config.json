@@ -14,7 +14,7 @@
     "f1_neutral": 0.6321070234113713,
     "f1_negative": 0.6163849154746424
   },
-  "train_seconds": 13.53,
+  "train_seconds": 17.06,
   "test": {
     "accuracy": 0.6831981897039412,
     "macro_f1": 0.6813171778267632,

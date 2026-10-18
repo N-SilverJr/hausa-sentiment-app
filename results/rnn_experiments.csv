@@ -1,4 +1,4 @@
 id,name,dev_macro_f1,train_seconds
-R1,trainable embedding + mean pooling,0.6824956379201286,13.53
-R2,BiLSTM + mean pooling,0.6675195874749812,159.37
-R3,BiLSTM + attention pooling,0.6620171676181469,199.23
+R1,trainable embedding + mean pooling,0.6824956379201286,17.06
+R2,BiLSTM + mean pooling,0.6675195874749812,167.17
+R3,BiLSTM + attention pooling,0.6620171676181469,333.59
