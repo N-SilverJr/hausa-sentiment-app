@@ -1,6 +1,6 @@
 # Hausa Sentiment Classification (AfriSenti)
 
-**Status:** classical model trained; deployment and report preparation in progress.
+**Status:** classical model trained; deployment configured; research report drafted.
 
 ## Project type
 Text classification for an African language (Hausa): positive / neutral / negative.
@@ -56,6 +56,10 @@ python app\app.py
 ```
 
 The app compares `models/classical_best.joblib` with `models/rnn_best.pt` side by side and returns each sentiment label with class probabilities. See [`app/README.md`](app/README.md) for deployment details.
+
+## Research report
+It documents the dataset, preprocessing, model comparisons, results, error analysis,
+deployment, limitations, and references.
 
 ## Render deployment
 
